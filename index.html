@@ -14,11 +14,11 @@
       color: #222;
     }
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
     }
     section {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
       padding: 20px;
       background: white;
       border-radius: 10px;
@@ -31,12 +31,35 @@
     li::before {
       content: "✔️ ";
     }
+    img {
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      max-width: 90%;
+    }
+    a {
+      color: #0077cc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .screenshots {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .screenshots img {
+      width: 30%;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>👨‍💻 Mon Portfolio</h1>
 
+    <!-- COMPÉTENCES -->
     <section>
       <h2>🖥️ Compétences</h2>
       <ul>
@@ -46,22 +69,62 @@
       </ul>
     </section>
 
+    <!-- PROJETS -->
     <section>
       <h2>📂 Projets</h2>
-      <ul>
-        <li>Scraping d’offres d’emploi exportées en Excel/Word</li>
-        <li>Application de gestion avec Django (CRUD complet, tableau de bord)</li>
-        <li>Application Android : recherche de produits locaux avec géolocalisation</li>
-      </ul>
-    </section>
 
-    <section>
-      <h2>🎯 Objectifs</h2>
+      <!-- SCRAPING AUTOMATISÉ -->
+      <h3>🔎 Scraping automatisé</h3>
+
+      <h4>Portaljob Madagascar</h4>
       <p>
-        - Améliorer mes compétences en automatisation avancée <br>
-        - Déployer des applications web avec Django & React <br>
-        - Publier ma première application Android sur le Play Store
+        <a href="https://github.com/tonpseudo/portaljob-scraping" target="_blank">
+          🔗 Voir le projet sur GitHub
+        </a>
       </p>
+      <h5>Extrait du code source :</h5>
+      <img src="images/portaljob_code.png" alt="Code scraping portaljob">
+      <h5>Exemple du fichier Excel généré :</h5>
+      <img src="images/portaljob_excel.png" alt="Résultat Excel portaljob">
+
+      <h4>Emploi Bénin</h4>
+      <p>
+        <a href="https://github.com/tonpseudo/emploibenin-scraping" target="_blank">
+          🔗 Voir le projet sur GitHub
+        </a>
+      </p>
+      <h5>Extrait du code source :</h5>
+      <img src="images/emploibenin_code.png" alt="Code scraping emploi Bénin">
+      <h5>Exemple du fichier Excel généré :</h5>
+      <img src="images/emploibenin_excel.png" alt="Résultat Excel emploi Bénin">
+
+      <hr>
+
+      <!-- DJANGO -->
+      <h3>🌐 Application web Django</h3>
+      <p>
+        <a href="https://github.com/tonpseudo/django-projet" target="_blank">
+          🔗 Voir le projet sur GitHub
+        </a>
+      </p>
+
+      <hr>
+
+      <!-- ANDROID -->
+      <h3>📱 Application Android (Kivy/KivyMD)</h3>
+      <p>
+        <a href="https://github.com/tonpseudo/kivy-app" target="_blank">
+          🔗 Voir le projet sur GitHub
+        </a>
+      </p>
+      <h5>Extrait du code source :</h5>
+      <img src="images/kivy_code.png" alt="Code source Kivy">
+      <h5>Captures de l'application :</h5>
+      <div class="screenshots">
+        <img src="images/kivy_screen1.png" alt="Interface Kivy 1">
+        <img src="images/kivy_screen2.png" alt="Interface Kivy 2">
+        <img src="images/kivy_screen3.png" alt="Interface Kivy 3">
+      </div>
     </section>
   </div>
 </body>
