@@ -87,13 +87,16 @@
     }
 
     .screenshots img {
-      flex: 1 1 calc(33% - 1rem); /* 3 images côte à côte */
+      flex: 1 1 calc(33% - 1rem); 
       max-width: 300px;
-      height: 220px;             /* même hauteur pour toutes */
+      max-height: 220px;   /* limite en hauteur */
       border-radius: 8px;
       border: 1px solid #ddd;
-      object-fit: cover;         /* remplissage uniforme */
+      object-fit: contain; /* on garde toute l’image visible */
+      background: #f8f8f8; /* fond neutre si l’image ne remplit pas toute la zone */
+      padding: 5px;        /* petit espace pour éviter que ça touche les bords */
     }
+
   </style>
 </head>
 <body>
