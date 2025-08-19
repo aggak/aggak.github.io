@@ -2,40 +2,16 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio - AGGAK</title>
   <style>
+    /* ====== STYLE GLOBAL ====== */
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background: #f4f4f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f9f9fb;
       color: #333;
-    }
-    h1, h2 {
-      color: #222;
-    }
-    .container {
-      max-width: 1000px;
-      margin: auto;
-    }
-    section {
-      margin-bottom: 50px;
-      padding: 20px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li::before {
-      content: "✔️ ";
-    }
-    img {
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      max-width: 90%;
+      line-height: 1.6;
     }
     a {
       color: #0077cc;
@@ -45,20 +21,107 @@
     a:hover {
       text-decoration: underline;
     }
+    h1, h2, h3 {
+      margin-top: 0;
+    }
+
+    /* ====== HEADER ====== */
+    header {
+      background: linear-gradient(135deg, #0077cc, #00aaff);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+
+    /* ====== CONTAINER ====== */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    /* ====== SECTIONS ====== */
+    section {
+      margin-bottom: 60px;
+    }
+    section h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: #0077cc;
+      border-left: 5px solid #0077cc;
+      padding-left: 10px;
+    }
+
+    /* ====== LISTES ====== */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li::before {
+      content: "✔️ ";
+    }
+
+    /* ====== CARDS ====== */
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+
+    /* ====== IMAGES ====== */
+    img {
+      margin: 10px 0;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      max-width: 100%;
+    }
     .screenshots {
       display: flex;
       flex-wrap: wrap;
       gap: 15px;
     }
     .screenshots img {
-      width: 30%;
+      flex: 1 1 calc(33.333% - 15px);
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f0f0f5;
+      color: #555;
+      font-size: 0.9em;
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2em; }
+      header p { font-size: 1em; }
+      .screenshots img { flex: 1 1 100%; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>👨‍💻 Mon Portfolio</h1>
+  <!-- HEADER -->
+  <header>
+    <h1>👨‍💻 Portfolio - AGGAK</h1>
+    <p>Développeur Python • Web Scraping • Django • Kivy</p>
+  </header>
 
+  <div class="container">
     <!-- COMPÉTENCES -->
     <section>
       <h2>🖥️ Compétences</h2>
@@ -73,63 +136,66 @@
     <section>
       <h2>📂 Projets</h2>
 
-      <!-- SCRAPING AUTOMATISÉ -->
-      <h3>🔎 Scraping automatisé</h3>
-
-      <h4>Portaljob Madagascar</h4>
-      <p>
-        <a href="https://github.com/aggak/scraping-portaljob" target="_blank">
-          🔗 Voir le projet sur GitHub
-        </a>
-      </p>
-      <p>Script permettant de récupérer toutes les offres d'emploi freelance du site portaljob-madagascar. Chaque offre est exportée vers un fichier Word, et un fichier Excel récapitule toutes les offres récupérées avec un lien hypertexte permettant d'ouvrir directement le fichier Word correspondant.
+      <!-- SCRAPING -->
+      <div class="card">
+        <h3>🔎 Scraping automatisé - Portaljob Madagascar</h3>
+        <p>
+          <a href="https://github.com/tonpseudo/portaljob-scraping" target="_blank">
+            🔗 Voir le projet sur GitHub
+          </a>
         </p>
-      <h5>Extrait du code source :</h5>
-      <img src="images/carbone1a.png" alt="Code scraping portaljob">
-      <h5>Exemple du fichier Excel généré :</h5>
-      <img src="images/portaljob_excel.png" alt="Résultat Excel portaljob">
+        <h4>Extrait du code source :</h4>
+        <img src="images/portaljob_code.png" alt="Code scraping Portaljob">
+        <h4>Exemple du fichier Excel généré :</h4>
+        <img src="images/portaljob_excel.png" alt="Résultat Excel Portaljob">
+      </div>
 
-      <h4>Emploi Bénin</h4>
-      <p>
-        Script pour scrapper toutes les offres en freelance du site emploibenin avec gestion de cloudfare grâce à selenium. Chaque offre est exportée dans un fichier Word et un fichier Exel récapitule toutes les offres scrappées avec un lien hypertexte pour ouvrir directement le fichier Word de chaque offre.
-        <a href="https://github.com/aggak/scrap-emploibenin" target="_blank">
-          🔗 Voir le projet sur GitHub
-        </a>
-      </p>
-      <h5>Extrait du code source :</h5>
-      <img src="images/emploibenin_code.png" alt="Code scraping emploi Bénin">
-      <h5>Exemple du fichier Excel généré :</h5>
-      <img src="images/emploibenin_excel.png" alt="Résultat Excel emploi Bénin">
-
-      <hr>
+      <div class="card">
+        <h3>🔎 Scraping automatisé - Emploi Bénin</h3>
+        <p>
+          <a href="https://github.com/tonpseudo/emploibenin-scraping" target="_blank">
+            🔗 Voir le projet sur GitHub
+          </a>
+        </p>
+        <h4>Extrait du code source :</h4>
+        <img src="images/emploibenin_code.png" alt="Code scraping Emploi Bénin">
+        <h4>Exemple du fichier Excel généré :</h4>
+        <img src="images/emploibenin_excel.png" alt="Résultat Excel Emploi Bénin">
+      </div>
 
       <!-- DJANGO -->
-      <h3>🌐 Application web Django</h3>
-      <p>
-        <a href="https://github.com/aggak/redac" target="_blank">
-          🔗 Voir le projet sur GitHub
-        </a>
-      </p>
-
-      <hr>
+      <div class="card">
+        <h3>🌐 Application web Django</h3>
+        <p>
+          <a href="https://github.com/tonpseudo/django-projet" target="_blank">
+            🔗 Voir le projet sur GitHub
+          </a>
+        </p>
+      </div>
 
       <!-- ANDROID -->
-      <h3>📱 Application Android (Kivy/KivyMD)</h3>
-      <p>
-        Il s'agit d'une application qui a pour but de mettre le répertoire des prix du Bénin sous forme d'interface graphique avec un champ de recherche pour trouver un produit
-        <a href="https://github.com/aggak/eRepertoire" target="_blank">
-          🔗 Voir le projet sur GitHub
-        </a>
-      </p>
-      <h5>Extrait du code source :</h5>
-      <img src="images/kivy_code.png" alt="Code source Kivy">
-      <h5>Captures de l'application :</h5>
-      <div class="screenshots">
-        <img src="images/kivy_screen1.png" alt="Interface Kivy 1">
-        <img src="images/kivy_screen2.png" alt="Interface Kivy 2">
-        <img src="images/kivy_screen3.png" alt="Interface Kivy 3">
+      <div class="card">
+        <h3>📱 Application Android (Kivy/KivyMD)</h3>
+        <p>
+          <a href="https://github.com/tonpseudo/kivy-app" target="_blank">
+            🔗 Voir le projet sur GitHub
+          </a>
+        </p>
+        <h4>Extrait du code source :</h4>
+        <img src="images/kivy_code.png" alt="Code source Kivy">
+        <h4>Captures de l'application :</h4>
+        <div class="screenshots">
+          <img src="images/kivy_screen1.png" alt="Interface Kivy 1">
+          <img src="images/kivy_screen2.png" alt="Interface Kivy 2">
+          <img src="images/kivy_screen3.png" alt="Interface Kivy 3">
+        </div>
       </div>
     </section>
   </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 - Portfolio créé avec ❤ par AGGAK
+  </footer>
 </body>
 </html>
