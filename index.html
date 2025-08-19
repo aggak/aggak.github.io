@@ -3,195 +3,175 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - AGGAK</title>
+  <title>Mes Projets</title>
   <style>
-    /* ====== STYLE GLOBAL ====== */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      background: #f9f9fb;
+      padding: 0;
+      background: #f4f7fa;
       color: #333;
-      line-height: 1.6;
     }
-    h1, h2, h3 {
-      margin-top: 0;
-    }
-
-    /* ====== HEADER ====== */
     header {
-      background: linear-gradient(135deg, #0077cc, #00aaff);
+      background: #1e3c72;
+      background: linear-gradient(90deg, #1e3c72, #2a5298);
       color: white;
       text-align: center;
-      padding: 60px 20px;
+      padding: 2rem 1rem;
     }
     header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
+      margin: 0;
+      font-size: 2.5rem;
     }
-    header p {
-      font-size: 1.2em;
-      opacity: 0.9;
-    }
-
-    /* ====== CONTAINER ====== */
     .container {
       max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
-
-    /* ====== SECTIONS ====== */
-    section {
-      margin-bottom: 60px;
-    }
-    section h2 {
-      font-size: 1.8em;
-      margin-bottom: 20px;
-      color: #0077cc;
-      border-left: 5px solid #0077cc;
-      padding-left: 10px;
-    }
-
-    /* ====== LISTES ====== */
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li::before {
-      content: "✔️ ";
-    }
-
-    /* ====== CARDS ====== */
-    .card {
+    .project {
       background: white;
       border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
     }
-    .card h3 {
+    .project h2 {
+      color: #1e3c72;
       margin-top: 0;
     }
-
-    /* ====== BOUTONS ====== */
-    .btn {
+    .project a {
       display: inline-block;
-      padding: 10px 18px;
-      margin: 8px 0;
-      background: #0077cc;
+      margin: 0.5rem 0;
+      padding: 0.5rem 1rem;
+      background: #2a5298;
       color: white;
-      font-weight: bold;
-      border-radius: 8px;
       text-decoration: none;
-      transition: all 0.3s ease;
+      border-radius: 6px;
+      transition: 0.3s;
     }
-    .btn:hover {
-      background: #005fa3;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    .project a:hover {
+      background: #1e3c72;
     }
-
-    /* ====== IMAGES ====== */
-    img {
-      margin: 10px 0;
-      border-radius: 10px;
-      border: 1px solid #ddd;
+    .desc {
+      margin: 1rem 0;
+      line-height: 1.6;
+    }
+    .row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .row .image-box {
+      flex: 1;
+      min-width: 280px;
+      text-align: center;
+    }
+    .row .image-box h4 {
+      margin-bottom: 0.5rem;
+      color: #444;
+    }
+    .row img {
       max-width: 100%;
-      max-height: 250px; /* limite hauteur */
-      object-fit: cover; /* recadre */
+      height: auto;
+      max-height: 280px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      object-fit: contain;
     }
     .screenshots {
       display: flex;
+      gap: 1rem;
       flex-wrap: wrap;
-      gap: 15px;
+      margin-top: 1rem;
     }
     .screenshots img {
-      flex: 1 1 calc(33.333% - 15px);
-    }
-
-    /* ====== FOOTER ====== */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #f0f0f5;
-      color: #555;
-      font-size: 0.9em;
-    }
-
-    /* ====== RESPONSIVE ====== */
-    @media (max-width: 768px) {
-      header h1 { font-size: 2em; }
-      header p { font-size: 1em; }
-      .screenshots img { flex: 1 1 100%; }
+      flex: 1;
+      min-width: 200px;
+      max-width: 32%;
+      max-height: 260px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      object-fit: cover;
     }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
   <header>
-    <h1>👨‍💻 Portfolio - AGGAK</h1>
-    <p>Développeur Python • Web Scraping • Django • Kivy</p>
+    <h1>Mes Projets</h1>
   </header>
 
   <div class="container">
-    <!-- COMPÉTENCES -->
-    <section>
-      <h2>🖥️ Compétences</h2>
-      <ul>
-        <li>Scraping automatisé (Python, Requests, BeautifulSoup, Selenium, Playwright)</li>
-        <li>Développement web avec Django (API REST, authentification, bases de données)</li>
-        <li>Développement Android avec Kivy et KivyMD</li>
-      </ul>
-    </section>
 
-    <!-- PROJETS -->
-    <section>
-      <h2>📂 Projets</h2>
-
-      <!-- SCRAPING -->
-      <div class="card">
-        <h3>🔎 Scraping automatisé - Portaljob Madagascar</h3>
-        <a class="btn" href="https://github.com/tonpseudo/portaljob-scraping" target="_blank">🔗 Voir le projet sur GitHub</a>
-        <h4>Extrait du code source :</h4>
-        <img src="images/carbon1a.png" alt="Code scraping Portaljob">
-        <h4>Exemple du fichier Excel généré :</h4>
-        <img src="images/portaljob_excel.png" alt="Résultat Excel Portaljob">
-      </div>
-
-      <div class="card">
-        <h3>🔎 Scraping automatisé - Emploi Bénin</h3>
-        <a class="btn" href="https://github.com/tonpseudo/emploibenin-scraping" target="_blank">🔗 Voir le projet sur GitHub</a>
-        <h4>Extrait du code source :</h4>
-        <img src="images/emploibenin_code.png" alt="Code scraping Emploi Bénin">
-        <h4>Exemple du fichier Excel généré :</h4>
-        <img src="images/emploibenin_excel.png" alt="Résultat Excel Emploi Bénin">
-      </div>
-
-      <!-- DJANGO -->
-      <div class="card">
-        <h3>🌐 Application web Django</h3>
-        <a class="btn" href="https://github.com/tonpseudo/django-projet" target="_blank">🔗 Voir le projet sur GitHub</a>
-      </div>
-
-      <!-- ANDROID -->
-      <div class="card">
-        <h3>📱 Application Android (Kivy/KivyMD)</h3>
-        <a class="btn" href="https://github.com/tonpseudo/kivy-app" target="_blank">🔗 Voir le projet sur GitHub</a>
-        <h4>Extrait du code source :</h4>
-        <img src="images/kivy_code.png" alt="Code source Kivy">
-        <h4>Captures de l'application :</h4>
-        <div class="screenshots">
-          <img src="images/kivy_screen1.png" alt="Interface Kivy 1">
-          <img src="images/kivy_screen2.png" alt="Interface Kivy 2">
-          <img src="images/kivy_screen3.png" alt="Interface Kivy 3">
+    <!-- Projet 1 : Portaljob -->
+    <div class="project">
+      <h2>Scraping Portaljob Madagascar</h2>
+      <a href="https://github.com/aggak/portaljob-scraper" target="_blank">Voir le projet sur GitHub</a>
+      <p class="desc">
+        Script permettant de récupérer toutes les offres d'emploi freelance du site web 
+        <b>portaljob-madagascar</b>. Chaque offre est exportée vers un fichier Word, 
+        et un fichier Excel récapitule toutes les offres récupérées avec un lien 
+        hypertexte permettant d'ouvrir directement le fichier Word correspondant à chaque offre.
+      </p>
+      <div class="row">
+        <div class="image-box">
+          <h4>Extrait du code source</h4>
+          <img src="images/portaljob-code.png" alt="Code source Portaljob">
+        </div>
+        <div class="image-box">
+          <h4>Exemple du fichier Excel généré</h4>
+          <img src="images/portaljob-excel.png" alt="Excel Portaljob">
         </div>
       </div>
-    </section>
-  </div>
+    </div>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2025 - Portfolio créé avec ❤ par AGGAK
-  </footer>
+    <!-- Projet 2 : Emploi Bénin -->
+    <div class="project">
+      <h2>Scraping EmploiBénin</h2>
+      <a href="https://github.com/aggak/emploibenin-scraper" target="_blank">Voir le projet sur GitHub</a>
+      <p class="desc">
+        Script qui collecte toutes les offres de freelance et télétravail du site 
+        <b>emploibenin</b>. Les données sont exportées dans des fichiers Word et 
+        Excel avec récapitulatif et liens directs vers chaque offre.
+      </p>
+      <div class="row">
+        <div class="image-box">
+          <h4>Extrait du code source</h4>
+          <img src="images/emploibenin-code.png" alt="Code source EmploiBenin">
+        </div>
+        <div class="image-box">
+          <h4>Exemple du fichier Excel généré</h4>
+          <img src="images/emploibenin-excel.png" alt="Excel EmploiBenin">
+        </div>
+      </div>
+    </div>
+
+    <!-- Projet 3 : Django -->
+    <div class="project">
+      <h2>Création d'applications web avec Django</h2>
+      <a href="https://github.com/aggak/django-webapp" target="_blank">Voir le projet sur GitHub</a>
+    </div>
+
+    <!-- Projet 4 : Application Kivy -->
+    <div class="project">
+      <h2>Application Mobile (Kivy)</h2>
+      <a href="https://github.com/aggak/kivy-app" target="_blank">Voir le projet sur GitHub</a>
+      <p class="desc">
+        Application mobile développée avec <b>Kivy</b>, permettant d'afficher et gérer 
+        des données locales via une interface intuitive et responsive.
+      </p>
+      <div class="row">
+        <div class="image-box">
+          <h4>Extrait du code source</h4>
+          <img src="images/kivy-code.png" alt="Code source Kivy">
+        </div>
+      </div>
+      <div class="screenshots">
+        <img src="images/kivy-screen1.png" alt="Capture 1 Kivy">
+        <img src="images/kivy-screen2.png" alt="Capture 2 Kivy">
+        <img src="images/kivy-screen3.png" alt="Capture 3 Kivy">
+      </div>
+    </div>
+
+  </div>
 </body>
 </html>
