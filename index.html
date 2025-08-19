@@ -83,15 +83,16 @@
       gap: 1rem;
       flex-wrap: wrap;
       margin-top: 1rem;
+      justify-content: center;
     }
+
     .screenshots img {
-      flex: 1;
-      min-width: 200px;
-      max-width: 32%;
-      max-height: 260px;
+      flex: 1 1 calc(33% - 1rem); /* 3 images côte à côte */
+      max-width: 300px;
+      height: 220px;             /* même hauteur pour toutes */
       border-radius: 8px;
       border: 1px solid #ddd;
-      object-fit: cover;
+      object-fit: cover;         /* remplissage uniforme */
     }
   </style>
 </head>
@@ -164,7 +165,6 @@
       </p>
      
       <div class="screenshots">
-        <h4>Interface de l'application</h4>
         <img src="images/kivy_screen1.png" alt="Capture 1 Kivy">
         <img src="images/kivy_screen2.png" alt="Capture 2 Kivy">
         <img src="images/kivy_screen3.png" alt="Capture 3 Kivy">
