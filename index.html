@@ -80,17 +80,11 @@
     }
     .screenshots {
       display: flex;
-      gap: 1rem;
       flex-wrap: wrap;
-      margin-top: 1rem;
-      justify-content: center;
+      gap: 15px;
     }
     .screenshots img {
-      max-width: 300px;   /* largeur max */
-      max-height: 200px;  /* hauteur max */
-      object-fit: cover;  /* recadre pour ne pas déformer */
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      flex: 1 1 calc(33.333% - 15px);
     }
    
 
