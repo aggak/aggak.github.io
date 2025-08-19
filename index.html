@@ -3,199 +3,143 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - AGGAK</title>
+  <title>Portfolio - Aggak</title>
   <style>
-    /* ====== STYLE GLOBAL ====== */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      background: #f9f9fb;
+      background: #f4f7fa;
       color: #333;
-      line-height: 1.6;
-    }
-    a {
-      color: #0077cc;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    h1, h2, h3 {
-      margin-top: 0;
     }
 
-    /* ====== HEADER ====== */
     header {
-      background: linear-gradient(135deg, #0077cc, #00aaff);
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
       color: white;
       text-align: center;
-      padding: 60px 20px;
+      padding: 2rem 1rem;
     }
+
     header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
+      margin: 0;
+      font-size: 2.5rem;
     }
+
     header p {
-      font-size: 1.2em;
-      opacity: 0.9;
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
     }
 
-    /* ====== CONTAINER ====== */
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
 
-    /* ====== SECTIONS ====== */
     section {
-      margin-bottom: 60px;
-    }
-    section h2 {
-      font-size: 1.8em;
-      margin-bottom: 20px;
-      color: #0077cc;
-      border-left: 5px solid #0077cc;
-      padding-left: 10px;
-    }
-
-    /* ====== LISTES ====== */
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li::before {
-      content: "✔️ ";
-    }
-
-    /* ====== CARDS ====== */
-    .card {
+      margin-bottom: 3rem;
       background: white;
+      padding: 1.5rem;
       border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
-    .card h3 {
-      margin-top: 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
-    /* ====== IMAGES ====== */
-    img {
-      margin: 10px 0;
-      border-radius: 10px;
-      border: 1px solid #ddd;
-      max-width: 100%;
+    section h2 {
+      color: #1e3c72;
+      margin-bottom: 1rem;
     }
-    .screenshots {
+
+    .project {
+      margin-bottom: 2rem;
+    }
+
+    .project h3 {
+      margin-bottom: 0.5rem;
+      color: #2a5298;
+    }
+
+    .project a {
+      display: inline-block;
+      margin-bottom: 1rem;
+      text-decoration: none;
+      color: white;
+      background: #2a5298;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .project a:hover {
+      background: #1e3c72;
+    }
+
+    .images {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
-    }
-    .screenshots img {
-      flex: 1 1 calc(33.333% - 15px);
+      gap: 1rem;
     }
 
-    /* ====== FOOTER ====== */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #f0f0f5;
-      color: #555;
-      font-size: 0.9em;
-    }
-
-    /* ====== RESPONSIVE ====== */
-    @media (max-width: 768px) {
-      header h1 { font-size: 2em; }
-      header p { font-size: 1em; }
-      .screenshots img { flex: 1 1 100%; }
+    .images img {
+      max-width: 300px;   /* largeur max */
+      max-height: 200px;  /* hauteur max */
+      object-fit: cover;  /* recadre pour ne pas déformer */
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
   <header>
-    <h1>👨‍💻 Portfolio - AGGAK</h1>
-    <p>Développeur Python • Web Scraping • Django • Kivy</p>
+    <h1>Mon Portfolio</h1>
+    <p>Développeur Python | Django | Kivy</p>
   </header>
 
-  <div class="container">
-    <!-- COMPÉTENCES -->
+  <main>
+    <!-- Scraping -->
     <section>
-      <h2>🖥️ Compétences</h2>
-      <ul>
-        <li>Scraping automatisé (Python, Requests, BeautifulSoup, Selenium, Playwright)</li>
-        <li>Développement web avec Django (API REST, authentification, bases de données)</li>
-        <li>Développement Android avec Kivy et KivyMD</li>
-      </ul>
-    </section>
+      <h2>Scraping automatisé</h2>
 
-    <!-- PROJETS -->
-    <section>
-      <h2>📂 Projets</h2>
-
-      <!-- SCRAPING -->
-      <div class="card">
-        <h3>🔎 Scraping automatisé - Portaljob Madagascar</h3>
-        <p>
-          <a href="https://github.com/tonpseudo/portaljob-scraping" target="_blank">
-            🔗 Voir le projet sur GitHub
-          </a>
-        </p>
-        <h4>Extrait du code source :</h4>
-        <img src="images/portaljob_code.png" alt="Code scraping Portaljob">
-        <h4>Exemple du fichier Excel généré :</h4>
-        <img src="images/portaljob_excel.png" alt="Résultat Excel Portaljob">
+      <div class="project">
+        <h3>Portaljob Madagascar</h3>
+        <a href="https://github.com/aggak/portaljob-scraping" target="_blank">Voir sur GitHub</a>
+        <div class="images">
+          <img src="images/portaljob_code.png" alt="Code source">
+          <img src="images/portaljob_excel.png" alt="Résultats Excel">
+        </div>
       </div>
 
-      <div class="card">
-        <h3>🔎 Scraping automatisé - Emploi Bénin</h3>
-        <p>
-          <a href="https://github.com/tonpseudo/emploibenin-scraping" target="_blank">
-            🔗 Voir le projet sur GitHub
-          </a>
-        </p>
-        <h4>Extrait du code source :</h4>
-        <img src="images/emploibenin_code.png" alt="Code scraping Emploi Bénin">
-        <h4>Exemple du fichier Excel généré :</h4>
-        <img src="images/emploibenin_excel.png" alt="Résultat Excel Emploi Bénin">
-      </div>
-
-      <!-- DJANGO -->
-      <div class="card">
-        <h3>🌐 Application web Django</h3>
-        <p>
-          <a href="https://github.com/tonpseudo/django-projet" target="_blank">
-            🔗 Voir le projet sur GitHub
-          </a>
-        </p>
-      </div>
-
-      <!-- ANDROID -->
-      <div class="card">
-        <h3>📱 Application Android (Kivy/KivyMD)</h3>
-        <p>
-          <a href="https://github.com/tonpseudo/kivy-app" target="_blank">
-            🔗 Voir le projet sur GitHub
-          </a>
-        </p>
-        <h4>Extrait du code source :</h4>
-        <img src="images/kivy_code.png" alt="Code source Kivy">
-        <h4>Captures de l'application :</h4>
-        <div class="screenshots">
-          <img src="images/kivy_screen1.png" alt="Interface Kivy 1">
-          <img src="images/kivy_screen2.png" alt="Interface Kivy 2">
-          <img src="images/kivy_screen3.png" alt="Interface Kivy 3">
+      <div class="project">
+        <h3>Emploi Bénin</h3>
+        <a href="https://github.com/aggak/emploibenin-scraping" target="_blank">Voir sur GitHub</a>
+        <div class="images">
+          <img src="images/emploibenin_code.png" alt="Code source">
+          <img src="images/emploibenin_excel.png" alt="Résultats Excel">
         </div>
       </div>
     </section>
-  </div>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2025 - Portfolio créé avec ❤ par AGGAK
-  </footer>
+    <!-- Django -->
+    <section>
+      <h2>Applications Web avec Django</h2>
+      <div class="project">
+        <h3>Projet Django</h3>
+        <a href="https://github.com/aggak/django-projet" target="_blank">Voir sur GitHub</a>
+      </div>
+    </section>
+
+    <!-- Kivy -->
+    <section>
+      <h2>Applications Android avec Kivy/KivyMD</h2>
+      <div class="project">
+        <h3>Application Mobile</h3>
+        <a href="https://github.com/aggak/kivy-app" target="_blank">Voir sur GitHub</a>
+        <div class="images">
+          <img src="images/kivy_code.png" alt="Code source">
+          <img src="images/kivy_ui1.png" alt="Interface 1">
+          <img src="images/kivy_ui2.png" alt="Interface 2">
+          <img src="images/kivy_ui3.png" alt="Interface 3">
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
