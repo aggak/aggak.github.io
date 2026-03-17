@@ -3,185 +3,167 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mes Projets</title>
+  <title>Portfolio | Gautier AHOSSI GNONLONFOUN</title>
   <style>
+    :root {
+      --primary: #1e3c72;
+      --secondary: #2a5298;
+      --accent: #00d2ff;
+      --bg: #f8fafc;
+      --text: #334155;
+    }
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Inter', -apple-system, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f7fa;
-      color: #333;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
     header {
-      background: #1e3c72;
-      background: linear-gradient(90deg, #1e3c72, #2a5298);
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 4rem 1rem;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+    header h1 { margin: 0; font-size: 2.8rem; letter-spacing: -1px; }
+    header p { font-size: 1.2rem; opacity: 0.9; margin-top: 10px; }
+
+    .container { max-width: 1000px; margin: -50px auto 3rem; padding: 0 1rem; }
+    
+    .intro-card {
+      background: white;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+      border-top: 5px solid var(--accent);
     }
-    .container {
-      max-width: 1100px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
+
     .project {
       background: white;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+      transition: transform 0.3s ease;
     }
-    .project h2 {
-      color: #1e3c72;
-      margin-top: 0;
-    }
-    .project a {
+    .project:hover { transform: translateY(-5px); }
+    
+    .tag {
       display: inline-block;
-      margin: 0.5rem 0;
-      padding: 0.5rem 1rem;
-      background: #2a5298;
+      background: #e2e8f0;
+      color: #475569;
+      padding: 2px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .project h2 { color: var(--primary); margin: 0.5rem 0; }
+    
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.7rem 1.5rem;
+      background: var(--primary);
       color: white;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 8px;
+      font-weight: 600;
       transition: 0.3s;
     }
-    .project a:hover {
-      background: #1e3c72;
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      margin-left: 10px;
     }
-    .desc {
-      margin: 1rem 0;
-      line-height: 1.6;
-    }
-    .row {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .row .image-box {
-      flex: 1;
-      min-width: 280px;
-      text-align: center;
-    }
-    .row .image-box h4 {
-      margin-bottom: 0.5rem;
-      color: #444;
-    }
-    .row img {
-      max-width: 100%;
-      height: auto;
-      max-height: 280px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-      object-fit: contain;
-    }
-    .screenshots {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-      justify-content: center;
-    }
-    .screenshots img {
-      max-width: 300px;   /* largeur max */
-      max-height: 200px;  /* hauteur max */
-      object-fit: cover;  /* recadre pour ne pas déformer */
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-   
+    .btn:hover { background: #152a50; color: white; }
 
+    .desc { margin: 1rem 0; color: #64748b; }
+    
+    .grid-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .image-box img {
+      width: 100%;
+      height: 200px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 1px solid #eee;
+    }
+    .highlight { color: var(--primary); font-weight: bold; }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>AHOSSI GNONLONFOUN Gautier</h1>
-    <h2>Mes Projets</h2>
+    <h1>Gautier AHOSSI GNONLONFOUN</h1>
+    <p>Développeur Python & Django</p>
   </header>
 
   <div class="container">
-
-    <div class="project">
-      <h2>Présentation</h2>
-      <p class="desc">
-        Comptable de formation, j’allie rigueur financière et esprit d’analyse à une solide expérience en rédaction web freelance, où j’ai développé mes compétences en rédaction et en référencement SEO.<br/>
-        Passionné par les outils numériques, je maîtrise la programmation en Python, que j’utilise pour automatiser certaines tâches de gestion et d’analyse de données.<br/>
-        Cette polyvalence me permet d’aborder chaque projet avec méthode, précision et créativité.
-      </p>
-      
+    <div class="intro-card">
+      <h2>À propos de mon expertise</h2>
+      <p>Ma force réside dans la dualité de mon profil : la <b>rigueur de l'audit comptable</b> alliée à la <b>puissance de l'automatisation informatique</b>. Je ne me contente pas de coder des outils, je conçois des solutions conformes aux exigences financières et fiscales.</p>
     </div>
 
-    <!-- Projet 1 : Portaljob -->
-    <div class="project">
-      <h2>Scraping Portaljob Madagascar</h2>
-      <a href="https://github.com/aggak/scraping-portaljob" target="_blank">Voir le projet sur GitHub</a>
+    <div class="project" style="border-left: 6px solid #ff9f43;">
+      <span class="tag">SAAS / Django / PDF Generation</span>
+      <h2>CVLabo.com — Plateforme de Génération de Documents</h2>
       <p class="desc">
-        Script permettant de récupérer toutes les offres d'emploi freelance du site web 
-        <b>portaljob-madagascar</b>. Chaque offre est exportée vers un fichier Word, 
-        et un fichier Excel récapitule toutes les offres récupérées avec un lien 
-        hypertexte permettant d'ouvrir directement le fichier Word correspondant à chaque offre.
+        Application web complète permettant aux utilisateurs de générer des CV professionnels au format PDF via un formulaire dynamique. Ce projet démontre ma capacité à gérer des <b>flux de données complexes</b> et à produire des <b>documents officiels exportables</b>.
       </p>
-      <div class="row">
+      <a href="https://www.cvlabo.com" target="_blank" class="btn">Visiter le site</a>
+      <a href="#" class="btn btn-outline">Détails techniques</a>
+    </div>
+
+    <div class="project">
+      <span class="tag">Finance Tool / Python</span>
+      <h2>Automatisation de la Facturation & Analyse de Prix</h2>
+      <p class="desc">
+        Développement d'outils permettant d'analyser le répertoire des prix du Bénin et d'automatiser le calcul des marges et de la TVA. Idéal pour garantir une <b>conformité fiscale sans erreur humaine</b>.
+      </p>
+      <div class="grid-images">
         <div class="image-box">
-          <h4>Extrait du code source</h4>
-          <img src="images/carbon1a.png" alt="Code source Portaljob">
+          <img src="images/kivy_screen1.png" alt="Interface Mobile de gestion">
         </div>
         <div class="image-box">
-          <h4>Exemple du fichier Excel généré</h4>
-          <img src="images/excel1.png" alt="Excel Portaljob">
+          <img src="images/excel1.png" alt="Reporting automatisé">
         </div>
       </div>
+      <a href="https://github.com/aggak/eRepertoire" target="_blank" class="btn">Code Source</a>
     </div>
 
-    <!-- Projet 2 : Emploi Bénin -->
     <div class="project">
-      <h2>Scraping EmploiBénin</h2>
-      <a href="https://github.com/aggak/scrap-emploibenin" target="_blank">Voir le projet sur GitHub</a>
+      <span class="tag">Web Scraping / Selenium</span>
+      <h2>Collecte de Données Marché (Freelance & Emploi)</h2>
       <p class="desc">
-        Script pour scrapper toutes les offres en freelance du site 
-        <b>emploibenin</b> avec gestion de cloudfare grâce à selenium. Les données sont exportées dans des fichiers Word et 
-        Excel avec récapitulatif et liens directs vers chaque offre.
+        Scripts avancés de récupération de données sur des plateformes internationales. Capacité à contourner les protections (Cloudflare) pour extraire et structurer des informations critiques sous format Excel/Word.
       </p>
-      <div class="row">
-        <div class="image-box">
-          <h4>Extrait du code source</h4>
-          <img src="images/carbon1b.png" alt="Code source EmploiBenin">
-        </div>
-        <div class="image-box">
-          <h4>Exemple du fichier Excel généré</h4>
-          <img src="images/excel2a.png" alt="Excel EmploiBenin">
-        </div>
-      </div>
+      <a href="https://github.com/aggak/scrap-emploibenin" target="_blank" class="btn">GitHub Scraping</a>
     </div>
 
-    <!-- Projet 3 : Django -->
     <div class="project">
-      <h2>Création d'applications web avec Django</h2>
-      <a href="https://github.com/aggak/redac" target="_blank">Voir le projet sur GitHub</a>
+      <span class="tag">Django Framework</span>
+      <h2>Système de Gestion de Flux (Redac)</h2>
       <p class="desc">
-        Application web pour gérer la rédaction (publication des briefs, choix des articles par les rédacteurs, relecture des correcteurs et soumission des articles rédigés aux clients.
+        Outil de gestion de workflow : attribution de tâches, suivi de progression, relecture et validation. Une architecture similaire à celle requise pour un <b>suivi de devis et de validation client</b>.
       </p>
-    </div>
-
-    <!-- Projet 4 : Application Kivy -->
-    <div class="project">
-      <h2>Application Mobile (Kivy)</h2>
-      <a href="https://github.com/aggak/eRepertoire" target="_blank">Voir le projet sur GitHub</a>
-      <p class="desc">
-        Application mobile développée avec <b>Kivy</b>, permettant d'afficher et gérer 
-        des données du répertoire des prix du Bénin via une interface intuitive et responsive.
-      </p>
-     
-      <div class="screenshots">
-        <img src="images/kivy_screen1.png" alt="Capture 1 Kivy">
-        <img src="images/kivy_screen2.png" alt="Capture 2 Kivy">
-        <img src="images/kivy_screen3.png" alt="Capture 3 Kivy">
-      </div>
+      <a href="https://github.com/aggak/redac" target="_blank" class="btn">Voir sur GitHub</a>
     </div>
 
   </div>
+
+  <footer style="text-align: center; padding: 2rem; color: #94a3b8; font-size: 0.9rem;">
+    &copy; 2026 Gautier AHOSSI GNONLONFOUN - Cotonou, Bénin
+  </footer>
+
 </body>
 </html>
