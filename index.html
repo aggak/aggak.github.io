@@ -3,165 +3,254 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Gautier AHOSSI GNONLONFOUN</title>
+  <title>Gautier AHOSSI | Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #1e3c72;
-      --secondary: #2a5298;
-      --accent: #00d2ff;
-      --bg: #f8fafc;
-      --text: #334155;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --primary: #38bdf8;
+      --text-main: #f1f5f9;
+      --text-dim: #94a3b8;
+      --accent: #818cf8;
     }
+
     body {
-      font-family: 'Inter', -apple-system, sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--text);
+      background-color: var(--bg);
+      color: var(--text-main);
       line-height: 1.6;
     }
+
     header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
+      padding: 5rem 1rem 3rem;
+      text-align: center;
+      background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin: 0;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+    }
+
+    .sub-header {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--primary);
+      font-size: 1.1rem;
+      margin-top: 10px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--primary);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Optimisation Images */
+    .img-container {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Remplit l'espace sans déformer */
+      object-position: top;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .img-container img {
+      transform: scale(1.05);
+    }
+
+    .content {
+      padding: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .tech-stack {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .tech-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--primary);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+
+    .project-card h2 {
+      font-size: 1.4rem;
+      margin: 0 0 10px 0;
+      color: #fff;
+    }
+
+    .project-card p {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .links {
+      padding: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn {
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #fff;
+      background: var(--primary);
+      padding: 8px 20px;
+      border-radius: 8px;
+      transition: 0.2s;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .btn:hover { opacity: 0.9; }
+
+    footer {
       text-align: center;
       padding: 4rem 1rem;
-      clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
     }
-    header h1 { margin: 0; font-size: 2.8rem; letter-spacing: -1px; }
-    header p { font-size: 1.2rem; opacity: 0.9; margin-top: 10px; }
-
-    .container { max-width: 1000px; margin: -50px auto 3rem; padding: 0 1rem; }
-    
-    .intro-card {
-      background: white;
-      border-radius: 15px;
-      padding: 2rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      margin-bottom: 2rem;
-      border-top: 5px solid var(--accent);
-    }
-
-    .project {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      padding: 2rem;
-      margin-bottom: 2.5rem;
-      transition: transform 0.3s ease;
-    }
-    .project:hover { transform: translateY(-5px); }
-    
-    .tag {
-      display: inline-block;
-      background: #e2e8f0;
-      color: #475569;
-      padding: 2px 12px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .project h2 { color: var(--primary); margin: 0.5rem 0; }
-    
-    .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.7rem 1.5rem;
-      background: var(--primary);
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-    .btn-outline {
-      background: transparent;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-      margin-left: 10px;
-    }
-    .btn:hover { background: #152a50; color: white; }
-
-    .desc { margin: 1rem 0; color: #64748b; }
-    
-    .grid-images {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-    .image-box img {
-      width: 100%;
-      height: 200px;
-      border-radius: 10px;
-      object-fit: cover;
-      border: 1px solid #eee;
-    }
-    .highlight { color: var(--primary); font-weight: bold; }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Gautier AHOSSI GNONLONFOUN</h1>
-    <p>Développeur Python & Django</p>
-  </header>
+<header>
+  <h1>Gautier AHOSSI</h1>
+  <div class="sub-header">> Full-Stack Developer | Python & Dart Specialist</div>
+</header>
 
-  <div class="container">
-    <div class="intro-card">
-      <h2>À propos de mon expertise</h2>
-      <p>Ma force réside dans la dualité de mon profil : la <b>rigueur de l'audit comptable</b> alliée à la <b>puissance de l'automatisation informatique</b>. Je ne me contente pas de coder des outils, je conçois des solutions conformes aux exigences financières et fiscales.</p>
-    </div>
+<div class="container">
+  <div class="grid">
 
-    <div class="project" style="border-left: 6px solid #ff9f43;">
-      <span class="tag">SAAS / Django / PDF Generation</span>
-      <h2>CVLabo.com — Plateforme de Génération de Documents</h2>
-      <p class="desc">
-        Application web complète permettant aux utilisateurs de générer des CV professionnels au format PDF via un formulaire dynamique. Ce projet démontre ma capacité à gérer des <b>flux de données complexes</b> et à produire des <b>documents officiels exportables</b>.
-      </p>
-      <a href="https://www.cvlabo.com" target="_blank" class="btn">Visiter le site</a>
-    </div>
-
-    <div class="project">
-      <span class="tag">Finance Tool / Python</span>
-      <h2>Automatisation de la Facturation & Analyse de Prix</h2>
-      <p class="desc">
-        Développement d'une application android avec Kivy, permettant d'afficher, d'analyser et de gérer les données du répertoire des prix du Bénin via une interface intuitive et responsive.</b>.
-      </p>
-      <div class="screenshots">
-        <img src="images/kivy_screen1.png" alt="Capture 1 Kivy">
-        <img src="images/kivy_screen2.png" alt="Capture 2 Kivy">
-        <img src="images/kivy_screen3.png" alt="Capture 3 Kivy">
+    <div class="project-card">
+      <div class="img-container">
+        <img src="https://via.placeholder.com/600x400/1e293b/38bdf8?text=CVLabo.com+Platform" alt="CVLabo Dashboard">
+      </div>
+      <div class="content">
+        <div class="tech-stack">
+          <span class="tech-tag">Django</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">ReportLab (PDF)</span>
+        </div>
+        <h2>CVLabo.com</h2>
+        <p>SaaS de génération automatique de documents professionnels. Gestion de formulaires complexes, moteurs de rendu PDF et architecture scalable.</p>
+      </div>
+      <div class="links">
+        <a href="https://www.cvlabo.com" class="btn">Live Demo</a>
       </div>
     </div>
 
-      <a href="https://github.com/aggak/eRepertoire" target="_blank" class="btn">Code Source</a>
+    <div class="project-card">
+      <div class="img-container">
+        <img src="images/kivy_screen1.png" alt="Mobile App Interface">
+      </div>
+      <div class="content">
+        <div class="tech-stack">
+          <span class="tech-tag">Kivy / Python</span>
+          <span class="tech-tag">SQLite</span>
+        </div>
+        <h2>eRepertoire Mobile</h2>
+        <p>Application cross-platform de consultation de bases de données de prix. Optimisation de la recherche locale et interface utilisateur responsive.</p>
+      </div>
+      <div class="links">
+        <a href="https://github.com/aggak/eRepertoire" class="btn">GitHub</a>
+      </div>
     </div>
 
-    <div class="project">
-      <span class="tag">Web Scraping / Selenium</span>
-      <h2>Collecte de Données Marché (Freelance & Emploi)</h2>
-      <p class="desc">
-        Scripts avancés de récupération de données sur des plateformes internationales. Capacité à contourner les protections (Cloudflare) pour extraire et structurer des informations critiques sous format Excel/Word.
-      </p>
-      <a href="https://github.com/aggak/scrap-emploibenin" target="_blank" class="btn">GitHub Scraping</a>
+    <div class="project-card">
+      <div class="img-container">
+        <img src="images/excel1.png" alt="Data Output">
+      </div>
+      <div class="content">
+        <div class="tech-stack">
+          <span class="tech-tag">Selenium</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Automation</span>
+        </div>
+        <h2>Data Extraction Engine</h2>
+        <p>Pipeline d'automatisation pour le scraping de plateformes protégées. Export structuré vers Excel/Word avec gestion de sessions et bypass Cloudflare.</p>
+      </div>
+      <div class="links">
+        <a href="https://github.com/aggak/scrap-emploibenin" class="btn">GitHub</a>
+      </div>
     </div>
 
-    <div class="project">
-      <span class="tag">Django Framework</span>
-      <h2>Système de Gestion de Flux (Redac)</h2>
-      <p class="desc">
-        Outil de gestion de workflow : attribution de tâches, suivi de progression, relecture et validation. Une architecture similaire à celle requise pour un <b>suivi de devis et de validation client</b>.
-      </p>
-      <a href="https://github.com/aggak/redac" target="_blank" class="btn">Voir sur GitHub</a>
+    <div class="project-card">
+      <div class="img-container">
+        <img src="https://via.placeholder.com/600x400/1e293b/38bdf8?text=Workflow+Manager" alt="Workflow App">
+      </div>
+      <div class="content">
+        <div class="tech-stack">
+          <span class="tech-tag">Django Admin</span>
+          <span class="tech-tag">Logiciel Métier</span>
+        </div>
+        <h2>Workflow Management System</h2>
+        <p>Système de gestion de flux de travail (Bonn de commande, relecture, validation). Idéal pour la traçabilité des processus en entreprise.</p>
+      </div>
+      <div class="links">
+        <a href="https://github.com/aggak/redac" class="btn">GitHub</a>
+      </div>
     </div>
 
   </div>
+</div>
 
-  <footer style="text-align: center; padding: 2rem; color: #94a3b8; font-size: 0.9rem;">
-    &copy; 2026 Gautier AHOSSI GNONLONFOUN - Cotonou, Bénin
-  </footer>
+<footer>
+  // Made with Python & Love <br>
+  Cotonou, Bénin - 2026
+</footer>
 
 </body>
 </html>
